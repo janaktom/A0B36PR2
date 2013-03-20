@@ -9,10 +9,33 @@ package Objects;
  * @author TOMHP
  */
 public class BinOp extends Expr {
-
+    
+    char operator;
+    Expr leva, prava;
+    
+    
+    public BinOp(char operand, Expr leva, Expr prava) {
+        this.operator = operand;
+        this.leva = leva;
+        this.prava = prava;
+    }
+    
+    
     @Override
     double evaluate() {
-        throw new UnsupportedOperationException("Not supported yet.");
+        switch (operator) {
+            case '*':
+                return leva.evaluate() * prava.evaluate();
+            case '/':
+                return leva.evaluate() / prava.evaluate();
+            case '+':
+                return leva.evaluate() + prava.evaluate();
+            case '-':
+                return leva.evaluate() - prava.evaluate();
+            default:
+                System.out.println("chyba");
+                return -1;
+        }
     }
 
     @Override
@@ -21,8 +44,9 @@ public class BinOp extends Expr {
     }
 
     @Override
-    Expr simplify() {
+    double log() {
         throw new UnsupportedOperationException("Not supported yet.");
     }
+
     
 }
