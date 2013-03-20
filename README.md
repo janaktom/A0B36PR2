@@ -8,9 +8,15 @@ Tema:Gragicka kalkulacka
     - (grafy)
 
 
+trida Expr
+    -abstraktni trida 
+tøída BinOp
+    - reprezentace operace, potomek Expr
+tøída Variable
+    - reprezentuje promenne, potomek Expr
+tøída Constant
+    - reprezentuje konstanty, resp. realna cisla, potomek Expr
 
-tøída Solver
-    - obsahuje všechny poèetní metody
 tøída reader
     - ète zadané øetìzce z TextArea
 tøída Game_GUI
