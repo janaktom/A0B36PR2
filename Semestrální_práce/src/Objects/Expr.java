@@ -13,6 +13,6 @@ public abstract class Expr {
  
     abstract Expr derive(char var);
  
-    abstract Expr simplify();
+    abstract double log();
     
 }
