@@ -9,10 +9,10 @@ package Objects;
  * @author TOMHP
  */
 public class Constant extends Expr {
-
+    double cislo;
     @Override
     double evaluate() {
-        throw new UnsupportedOperationException("Not supported yet.");
+         return (double)cislo;
     }
 
     @Override
@@ -21,8 +21,9 @@ public class Constant extends Expr {
     }
 
     @Override
-    Expr simplify() {
+    double log() {
         throw new UnsupportedOperationException("Not supported yet.");
     }
+
     
 }
