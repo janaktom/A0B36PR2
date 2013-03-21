@@ -10,17 +10,17 @@ Tema:Gragicka kalkulacka
 
 trida Expr
     -abstraktni trida 
-tøída BinOp
+trida BinOp
     - reprezentace operace, potomek Expr
-tøída Variable
+trida Variable
     - reprezentuje promenne, potomek Expr
-tøída Constant
+trida Constant
     - reprezentuje konstanty, resp. realna cisla, potomek Expr
 
-tøída reader
-    - ète zadané øetìzce z TextArea
-tøída Game_GUI
-    - spouští nové okno aplikace
-    - tøída ve které vzniká grafické rozhraní
+trida reader
+    - cte zadane retezce z TextArea
+trida Game_GUI
+    - spousti nove okno aplikace
+    - trida ve které vznika graficke rozhrani
 
-použité technologie: knihovna Java.Swing, popøípdì nìjaká knihovna na kreslení grafù
+pouzite technologie: knihovna Java.Swing, popripade knihovna na kresleni grafu
