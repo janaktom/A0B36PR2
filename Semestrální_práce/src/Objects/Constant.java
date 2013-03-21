@@ -10,19 +10,35 @@ package Objects;
  */
 public class Constant extends Expr {
     double cislo;
+    
+    public Constant(double cislo){
+    this.cislo = cislo;
+    }
+    
     @Override
     double evaluate() {
          return (double)cislo;
     }
 
+    
     @Override
-    Expr derive(char var) {
-        throw new UnsupportedOperationException("Not supported yet.");
+    Expr log() {
+       if(cislo>0){
+        return new Constant(Math.log10(cislo));
+       }
+        System.out.println("Logaritmus lze pocitat pouze z nezapornych cisel");
+       return null;
+    }
+    
+    @Override
+    Expr square(){
+        return new Constant(Math.sqrt(cislo));
+    
     }
 
     @Override
-    double log() {
-        throw new UnsupportedOperationException("Not supported yet.");
+    Expr divide() {
+        return new Constant(cislo);
     }
 
     
