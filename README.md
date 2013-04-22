@@ -4,23 +4,13 @@ A0B36PR2
 Semestralni prace A0B36PR2
 Tema:Gragicka kalkulacka
     - operace scitani, odcitani,deleni,nasobeni
-    - derivace, sin, cos, tan, sqrt, log, n!
+    - sin, cos, tan, sqrt, log, n!
     - (grafy)
 
 
-trida Expr
-    -abstraktni trida 
-trida BinOp
-    - reprezentace operace, potomek Expr
-trida Variable
-    - reprezentuje promenne, potomek Expr
-trida Constant
-    - reprezentuje konstanty, resp. realna cisla, potomek Expr
+trida Calc obsluhuje GUI i s udalostmi s vyuzitim vnitrni tridy
 
-trida reader
-    - cte zadane retezce z TextArea
-trida Game_GUI
-    - spousti nove okno aplikace
-    - trida ve které vznika graficke rozhrani
+trida CalcLogic obsahuje logickou cast vypoctu
+    
 
 pouzite technologie: knihovna Java.Swing, popripade knihovna na kresleni grafu
