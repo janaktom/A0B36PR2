@@ -63,6 +63,13 @@ public class CalcLogic {
         currentTotal = Math.tan(Math.toRadians(n));
     }
     
+    public void square(Double n){
+        currentTotal = n*n;
+    }
+    
+    public void sqrt(Double n){
+        currentTotal = Math.sqrt(n);
+    }
 
     
     private double convertToNumber(String n) {
