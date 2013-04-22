@@ -195,10 +195,12 @@ class Calc extends JFrame {
                         logic.cos(Double.valueOf(displayText));
                      
                     }else if(prevOp.equals("tan")){
-                        logic.tan(Double.valueOf(displayText));
-                       
+                        logic.tan(Double.valueOf(displayText)); 
+                    }else if(prevOp.equals("square")){
+                        logic.square(Double.valueOf(displayText));
+                    }else if(prevOp.equals("root")){
+                        logic.sqrt(Double.valueOf(displayText));
                     }
-
                     screen.setText("" + logic.getTotalString());
 
                 } catch (NumberFormatException ex) {
