@@ -24,7 +24,7 @@ class Calc extends JFrame {
     
 
     public Calc() {
-        this.setTitle("Simple Calc");
+        this.setTitle("Calculator");
         this.setResizable(false);
         this.setLocationRelativeTo(null);
           
@@ -32,6 +32,7 @@ class Calc extends JFrame {
         ActionListener numListener = new NumListener();
         ActionListener otherListener = new OtherListener();
         ActionListener piListener = new PiListener();
+        ActionListener MenuListener = new MenuListener();
   
         
         screen = new JTextField("0", 12);
@@ -130,15 +131,26 @@ class Calc extends JFrame {
         pi.addActionListener(piListener);
         pi.setFont(BIGGER_FONT);
         
-
-        
- 
-
+       
         JPanel clearPanel = new JPanel();
         clearPanel.setLayout(new FlowLayout());
         clearPanel.add(clearButton);
+        
+        JMenuBar menuBar = new JMenuBar();
+        JMenu menu = new JMenu("Menu");
+        menuBar.add(menu);
+        
+        JMenuItem quit = new JMenuItem("Quit");
+        JMenuItem graf = new JMenuItem("Graphs");
+        menu.add(graf);
+        menu.add(quit);
+        
+        quit.addActionListener(MenuListener);
+        
+
 
         JPanel content = new JPanel();
+        this.setJMenuBar(menuBar);
         content.setLayout(new BorderLayout(5, 5));
         content.add(screen, BorderLayout.NORTH);
         content.add(buttonPanel, BorderLayout.WEST);
@@ -166,12 +178,6 @@ class Calc extends JFrame {
         @Override
         public void actionPerformed(ActionEvent e) {
                 String displayText = screen.getText();
-//            if (startingNumber&&"sin".equals(prevOp)) {
-//                screen.setText("sin");
-//                logic.sinus(Double.valueOf(displayText));
-//                
-//
-//            } else {
 
                 startingNumber = true;
                 try {
@@ -189,11 +195,9 @@ class Calc extends JFrame {
                     } else if (prevOp.equals("/")) {
                         logic.divide(displayText);
                     } else if(prevOp.equals("sin")){
-                        logic.sinus(Double.valueOf(displayText));
-                        
+                        logic.sinus(Double.valueOf(displayText));  
                     } else if(prevOp.equals("cos")){
                         logic.cos(Double.valueOf(displayText));
-                     
                     }else if(prevOp.equals("tan")){
                         logic.tan(Double.valueOf(displayText)); 
                     }else if(prevOp.equals("square")){
@@ -262,6 +266,18 @@ class Calc extends JFrame {
         public void actionPerformed(ActionEvent e) {
             actionClear();
         }
+    }
+    
+    class MenuListener implements ActionListener{
+
+        @Override
+        public void actionPerformed(ActionEvent ae) {
+            String str = ae.getActionCommand();
+            if("Quit".equals(str)){
+                System.exit(0);
+            }
+        }
+    
     }
 
     public static void main(String[] args) {
